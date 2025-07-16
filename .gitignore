@@ -1,0 +1,29 @@
+# Storage directory for saved browser sessions
+storage/
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Test results
+test-results/
+
+# Build output
+dist/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+.env
