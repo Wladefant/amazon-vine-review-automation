@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { draftReview } from '../lib/gemini';
 import { splitReview } from '../lib/parseGemini';
+import fs from 'fs';
 
 const RAND = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
@@ -24,6 +25,7 @@ Die Rezension soll:
 `;
 
 test('write all pending Vine reviews, slowly', async ({ page, context }) => {
+  test.skip(!fs.existsSync('storage/amazon.json'), 'login state missing');
   await page.goto('https://www.amazon.de/vine/vine-reviews?review-type=pending_review');
 
   // ---- helper: sleep random 2‑4 s
